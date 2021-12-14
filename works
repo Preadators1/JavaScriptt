@@ -1,0 +1,24 @@
+package com.company;
+ 
+import java.util.Scanner;
+ 
+public class UczenTest {
+    Uczen uczen1 = new Uczen("Kowal");
+    uczen1.wstawOcene(3,5);
+    System.out.println(uczen1.toString());
+    Scanner scanner = new Scanner(System.in);
+ 
+    void dodajUczniow() {
+        while (scanner.next()!="END") {
+            int licznik=0;
+            String nazwa="uczen" + licznik;
+            String nazwisko = scanner.next();
+            int ocena1 = scanner.nextInt();
+            int ocena2 = scanner.nextInt();
+            Uczen uczen2 = new Uczen(nazwisko, ocena1, ocena2);
+            System.out.println(uczen2.srednia());
+            System.out.println(uczen2.toString());
+            licznik++;
+        }
+    }
+}
